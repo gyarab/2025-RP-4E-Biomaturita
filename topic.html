@@ -1,0 +1,120 @@
+<!-- filepath: c:\Users\Žofie\2025-RP-4E-Biomaturita\topic.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology Topic - Learning Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            background-color: #1b5e20;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #2e7d32;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #81c784;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .topic-header {
+            background: linear-gradient(135deg, #2e7d32 0%, #558b2f 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .topic-content {
+            background: #e8f5e9;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 5px solid #2e7d32;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        .topic-content h2 {
+            color: #1b5e20;
+            margin-bottom: 1rem;
+        }
+        .topic-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        footer {
+            background-color: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🧬 Biomaturita</h1>
+        <p>Připrav se na maturitu z biologie</p>
+    </header>
+
+    <nav>
+        <a href="mainpage.html">Home</a>
+        <a href="topics.html">Topics</a>
+        <a href="#resources">Resources</a>
+        <a href="#practice">Practice</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="topic-header">
+            <h2 id="topicTitle">Topic Title</h2>
+            <p id="topicSubtitle">Subtitle goes here</p>
+        </div>
+
+        <div class="topic-content">
+            <h2>Content</h2>
+            <div id="topicText">
+                <p>Content from database will be displayed here...</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Biology Exam Prep. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Placeholder for fetching data from database
+        // Replace with actual API call or database query
+        async function loadTopic() {
+            // Example: const response = await fetch('/api/topic?id=1');
+            // const data = await response.json();
+            // document.getElementById('topicTitle').textContent = data.title;
+            // document.getElementById('topicText').textContent = data.content;
+        }
+        loadTopic();
+    </script>
+</body>
+</html>
