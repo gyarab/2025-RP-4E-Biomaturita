@@ -83,6 +83,7 @@ nav a:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
 }
 
 .topic-card:hover {
@@ -181,6 +182,9 @@ footer {
     gap: 1.5rem;
 }
 
+.practice-cards a {
+    text-decoration: none;
+}
 .practice-card {
     background: white;
     padding: 1.5rem;
@@ -188,6 +192,7 @@ footer {
     border-left: 5px solid #2e7d32;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
 }
 
 .practice-card:hover {
