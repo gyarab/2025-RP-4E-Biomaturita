@@ -13,11 +13,11 @@
     </header>
 
     <nav>
-        <a href="mainpage.html">Domů</a>
-        <a href="topics.html">Témata</a>
-        <a href="resources.html">Zdroje</a>
-        <a href="practice.html">Procvičování</a>
-        <a href="contact.html">Kontakty</a>
+        <a href="mainpage.php">Domů</a>
+        <a href="topics.php">Témata</a>
+        <a href="resources.php">Zdroje</a>
+        <a href="practice.php">Procvičování</a>
+        <a href="contact.php">Kontakty</a>
     </nav>
 
     <section class="hero">
@@ -52,20 +52,26 @@
                 <h3>📝 Otázky s výběrem</h3>
                 <p>Testuj své znalosti otázkami s výběrem odpovědí pokrývajícími všechna hlavní témata biologie.</p>
             </div>
+            <a href="poznavacka.php">
             <div class="practice-card">
                 <h3>🎯 Poznavačka</h3>
                 <p>Dynamické kvízy, které se přizpůsobují tvé úrovni a sledují tvůj pokrok.</p>
             </div>
-            <a href="pexeso.html">
+            </a>
+            <a href="pexeso.php">
                 <div class="practice-card">
                     <h3>🧩 Pexeso</h3>
                     <p>Zlepši svou paměť a znalosti zábavným způsobem pomocí naší hry pexeso.</p>
                 </div>
             </a>
-            <div class="practice-card">
-                <h3>🧪 Tvorba testů</h3>
-                <p>Vyzkoušej si kompletní testy v časovém limitu a připrav se na skutečný formát zkoušky.</p>
-            </div>
+            /* 
+                a href="tvorba_testu.html">
+                    div class="practice-card">
+                        h3>🧪 Tvorba testů</h3>
+                        p>Vyzkoušej si kompletní testy v časovém limitu a připrav se na skutečný formát zkoušky.</p>
+                    /div>
+                /a>
+            */
         </div>
     </section>
     <footer>
