@@ -52,11 +52,11 @@ if (!$topic) {
     </nav>
 
     <div class="container">
-        <div class="topic-header">
+        <div class="topic-header" style="text-decoration: none; font-weight: bold;">
             <h2><?php echo htmlspecialchars($topic['nazev']); ?></h2>
         </div>
 
-        <div class="topic-content">
+        <div class="topic-content" style="text-decoration: none; font-weight: bold;">
             <div id="topicText">
                 <?php echo nl2br(htmlspecialchars($topic['obsah'])); ?>
             </div>

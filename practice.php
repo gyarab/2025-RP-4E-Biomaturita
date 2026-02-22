@@ -14,11 +14,11 @@
     </header>
 
     <nav>
-        <a href="mainpage.html">Domů</a>
-        <a href="topics.html">Témata</a>
-        <a href="resources.html">Zdroje</a>
-        <a href="practice.html">Procvičování</a>
-        <a href="contact.html">Kontakty</a>
+        <a href="mainpage.php">Domů</a>
+        <a href="topics.php">Témata</a>
+        <a href="resources.php">Zdroje</a>
+        <a href="practice.php">Procvičování</a>
+        <a href="contact.php">Kontakty</a>
     </nav>
 
     <section class="hero">
@@ -39,10 +39,6 @@
             <div class="topic-card">
                 <h3>📋 Pexesso</h3>
                 <p>Rozvíjej své dovednosti v psaní esejí pomocí řízených podnětů a vzorových odpovědí. Nauč se efektivně strukturovat komplexní biologie eseje  .</p>
-            </div>
-            <div class="topic-card">
-                <h3>🧪 Tvoreni testu</h3>
-                <p>Vyzkoušej si kompletní testy v časovém limitu. Zažij skutečný formát zkoušky a získej jistotu před maturitou.</p>
             </div>
         </div>
     </div>

@@ -45,7 +45,7 @@ $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="container">
         <div class="topics-list">
             <?php foreach ($topics as $topic): ?>
-            <a href="topic.php?id=<?php echo htmlspecialchars($topic['id']); ?>" class="topic-card-link">
+            <a href="topic.php?id=<?php echo htmlspecialchars($topic['id']); ?>" class="topic-card-link" style="text-decoration: none; font-weight: bold;">
                 <div class="topic-card">
                     <h3><?php echo htmlspecialchars($topic['nazev']); ?></h3>
                     <p><?php echo htmlspecialchars(substr($topic['obsah'], 0, 100)); ?>...</p>

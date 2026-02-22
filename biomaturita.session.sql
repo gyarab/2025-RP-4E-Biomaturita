@@ -1,7 +1,7 @@
 CREATE TABLE tema (
     id SERIAL PRIMARY KEY,
     nazev VARCHAR(500) NOT NULL,
-    obsah TEXT NOT NULL,  -- dlouhý zpracovaný text
+    obsah TEXT NOT NULL 
 );
 
 CREATE TABLE otazky (
@@ -33,7 +33,7 @@ CREATE TABLE poznavacka (
 CREATE TABLE image_areas (
     id SERIAL PRIMARY KEY,
     obrazek_id INTEGER NOT NULL REFERENCES poznavacka(id) ON DELETE CASCADE,
-    nazev VARCHAR(500) NOT NULL,  -- správný název
+    nazev VARCHAR(500) NOT NULL,  
     x INTEGER NOT NULL,
     y INTEGER NOT NULL,
     vyska INTEGER NOT NULL,
