@@ -1,10 +1,22 @@
 <?php
-require_once 'db.php'; // Database connection file
 
-// Get tema_id from URL parameter
+include 'pripojeni.php';
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Database connection failed: " . $e->getMessage());
+}
+
 $tema_id = isset($_GET['tema_id']) ? intval($_GET['tema_id']) : 1;
 
-// Fetch image and areas from database
+$stmt = $pdo->prepare("
+    SELECT nazev FROM tema WHERE id = ?
+");
+$stmt->execute([$tema_id]);
+$tema = $stmt->fetch(PDO::FETCH_ASSOC);
+
 $stmt = $pdo->prepare("
     SELECT p.id, p.obrazek_path 
     FROM poznavacka p 
@@ -18,7 +30,6 @@ if (!$poznavacka) {
     die("No image found for this topic.");
 }
 
-// Fetch all clickable areas for this image
 $stmt = $pdo->prepare("
     SELECT nazev, x, y, vyska, sirka 
     FROM image_areas 
@@ -32,43 +43,20 @@ if (empty($areas)) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poznávačka</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        #game-container {
-            position: relative;
-            display: inline-block;
-            margin: 2rem auto;
-            border: 5px solid #2e7d32;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        }
-        #photo {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-        #word {
-            margin: 20px 0;
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #1b5e20;
-        }
-        .feedback {
-            margin-top: 10px;
-            font-size: 1.2rem;
-            color: #555;
-        }
-        .feedback.correct {
-            color: #2e7d32;
-        }
-        .feedback.wrong {
-            color: #c62828;
-        }
+        #image-container { position: relative; display: inline-block; }
+        #feedback { margin: 20px 0; font-size: 18px; font-weight: bold; }
+        .correct { color: green; }
+        .incorrect { color: red; }
+        .topic-info { margin-bottom: 30px; }
+        .topic-info h2 { color: #1976d2; margin-bottom: 10px; }
+        .current-part { font-size: 20px; font-weight: bold; color: #0d47a1; background: #e3f2fd; padding: 15px; border-radius: 8px; text-align: center; margin-bottom: 20px; }
     </style>
 </head>
 <body>
@@ -85,18 +73,15 @@ if (empty($areas)) {
         <a href="contact.php">Kontakty</a>
     </nav>
 
-    <section class="hero">
-        <h2>Poznávačka</h2>
-        <p>Otestuj své znalosti klikáním na správné místo na obrázku</p>
-    </section>
-
     <div class="container">
-        <p id="word">Klikni na: <span id="target-word"></span></p>
-        <div id="game-container">
-            <img id="photo" src="<?php echo htmlspecialchars($poznavacka['obrazek_path']); ?>" alt="Poznávačka">
+        <div class="topic-info">
+            <h2><?php echo htmlspecialchars($tema['nazev']); ?></h2>
         </div>
-        <p class="feedback" id="feedback"></p>
-        <p>Skóre: <span id="score">0</span> / <span id="total">0</span></p>
+        <div class="current-part" id="current-part">Klikni na: <span id="part-name"></span></div>
+        <div id="feedback"></div>
+        <div id="image-container">
+            <img src="<?php echo htmlspecialchars($poznavacka['obrazek_path']); ?>" id="clickable-image" style="cursor: pointer;">
+        </div>
     </div>
 
     <footer>
@@ -104,58 +89,45 @@ if (empty($areas)) {
     </footer>
 
     <script>
-        const targets = <?php echo json_encode($areas); ?>;
-        
-        let currentTarget = null;
-        let score = 0;
-        let total = 0;
+        const areas = <?php echo json_encode($areas); ?>;
+        const image = document.getElementById('clickable-image');
+        const feedback = document.getElementById('feedback');
+        const partName = document.getElementById('part-name');
+        let currentAreaIndex = 0;
 
-        const wordElement = document.getElementById("target-word");
-        const feedbackElement = document.getElementById("feedback");
-        const photoElement = document.getElementById("photo");
-        const scoreElement = document.getElementById("score");
-        const totalElement = document.getElementById("total");
-
-        function setRandomTarget() {
-            currentTarget = targets[Math.floor(Math.random() * targets.length)];
-            wordElement.textContent = currentTarget.nazev;
-            feedbackElement.textContent = "";
-            feedbackElement.className = "feedback";
+        function updateCurrentPart() {
+            if (currentAreaIndex < areas.length) {
+                partName.textContent = areas[currentAreaIndex].nazev;
+            }
         }
 
-        photoElement.addEventListener("click", (event) => {
-            const rect = photoElement.getBoundingClientRect();
+        updateCurrentPart();
+
+        image.addEventListener('click', function(event) {
+            const rect = image.getBoundingClientRect();
             const clickX = event.clientX - rect.left;
             const clickY = event.clientY - rect.top;
 
-            // Scale coordinates based on actual vs displayed image size
-            const scaleX = photoElement.naturalWidth / photoElement.width;
-            const scaleY = photoElement.naturalHeight / photoElement.height;
-            const scaledX = clickX * scaleX;
-            const scaledY = clickY * scaleY;
+            const currentArea = areas[currentAreaIndex];
+            const areaLeft = currentArea.x;
+            const areaTop = currentArea.y;
+            const areaRight = areaLeft + currentArea.sirka;
+            const areaBottom = areaTop + currentArea.vyska;
 
-            total++;
-            totalElement.textContent = total;
-
-            if (
-                scaledX >= currentTarget.x &&
-                scaledX <= currentTarget.x + currentTarget.sirka &&
-                scaledY >= currentTarget.y &&
-                scaledY <= currentTarget.y + currentTarget.vyska
-            ) {
-                score++;
-                scoreElement.textContent = score;
-                feedbackElement.textContent = "Správně! ✓";
-                feedbackElement.className = "feedback correct";
-                setTimeout(setRandomTarget, 1000);
+            if (clickX >= areaLeft && clickX <= areaRight && clickY >= areaTop && clickY <= areaBottom) {
+                feedback.className = 'correct';
+                feedback.textContent = 'Správně! ✓ ' + currentArea.nazev;
+                currentAreaIndex++;
+                if (currentAreaIndex >= areas.length) {
+                    feedback.textContent = 'Hotovo! Všechny oblasti kliknuty správně! ✓';
+                } else {
+                    updateCurrentPart();
+                }
             } else {
-                feedbackElement.textContent = "Zkus znovu! ✗";
-                feedbackElement.className = "feedback wrong";
+                feedback.className = 'incorrect';
+                feedback.textContent = 'Špatně! ✗ Klikni na: ' + currentArea.nazev;
             }
         });
-
-        // Initialize the game
-        setRandomTarget();
     </script>
 </body>
 </html>

@@ -26,22 +26,29 @@
         <p>Vyber si preferovaný způsob učení a zvládni biologii</p>
     </section>
 
-    <div class="container">
-        <div class="topics-list">
-            <div class="topic-card">
-                <h3>📝 Otazky s vyberem</h3>
-                <p>Otestuj své znalosti pečlivě vybranými otázkami s výběrem odpovědí pokrývajícími všechna hlavní témata biologie. Okamžitá zpětná vazba ti pomůže učit se z chyb  .</p>
+    <section class="practice-options">
+        <h2>Možnosti procvičování</h2>
+        <div class="practice-cards">
+            <a href="otazky_menu.php">
+            <div class="practice-card">
+                <h3>📝 Otázky s výběrem</h3>
+                <p>Testuj své znalosti otázkami s výběrem odpovědí pokrývajícími všechna hlavní témata biologie.</p>
             </div>
-            <div class="topic-card">
-                <h3>🎯 Poznavacka</h3>
-                <p>Zapoj se do dynamických kvízů, které se přizpůsobují tvé úrovni výkonu. Sleduj svůj pokrok a identifikuj slabé oblasti pro cílené studium.</p>
+            </a>
+            <a href="poznavacka_menu.php">
+            <div class="practice-card">
+                <h3>🎯 Poznavačka</h3>
+                <p>Dynamické kvízy, které se přizpůsobují tvé úrovni a sledují tvůj pokrok.</p>
             </div>
-            <div class="topic-card">
-                <h3>📋 Pexesso</h3>
-                <p>Rozvíjej své dovednosti v psaní esejí pomocí řízených podnětů a vzorových odpovědí. Nauč se efektivně strukturovat komplexní biologie eseje  .</p>
-            </div>
+            </a>
+            <a href="pexeso_menu.php">
+                <div class="practice-card">
+                    <h3>🧩 Pexeso</h3>
+                    <p>Zlepši svou paměť a znalosti zábavným způsobem pomocí naší hry pexeso.</p>
+                </div>
+            </a>
         </div>
-    </div>
+    </section>
 
     <footer>
         <p>&copy; 2025 Biology Exam Prep. All rights reserved.</p>

@@ -48,10 +48,12 @@
     <section class="practice-options">
         <h2>Možnosti procvičování</h2>
         <div class="practice-cards">
+            <a href="otazky_menu.php">
             <div class="practice-card">
                 <h3>📝 Otázky s výběrem</h3>
                 <p>Testuj své znalosti otázkami s výběrem odpovědí pokrývajícími všechna hlavní témata biologie.</p>
             </div>
+            </a>
             <a href="poznavacka_menu.php">
             <div class="practice-card">
                 <h3>🎯 Poznavačka</h3>
