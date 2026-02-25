@@ -12,38 +12,38 @@
         <p>Připrav se na maturitu z biologie</p>
     </header>
 
-    <nav>
-        <a href="mainpage.php">Domů</a>
-        <a href="topics.php">Témata</a>
-        <a href="resources.php">Zdroje</a>
-        <a href="practice.php">Procvičování</a>
-        <a href="contact.php">Kontakty</a>
-    </nav>
+    <?php include 'menu.php'; ?>
 
     <section class="hero">
-        <h2>Ovládněte svou maturitu z biologie</h2>
-        <p>Komplexní studijní materiály, cvičné otázky a odborné vedení</p>
+        <h2>Nauč se vše co potřebuješ k maturitě z biologie</h2>
+        <p>Projdi si spracovaná témata a procvič si své znalosti ve třech typech cvičeí</p>
     </section>
 
     <div class="container">
-        <div class="sections">
-            <div class="card">
-                <h3>🔬 Studijní témata</h3>
-                <p>Naučte se klíčové biologické koncepty včetně buněk, genetiky, evoluce, ekologie a lidských systémů.</p>
-            </div>
-            <div class="card">
-                <h3>📊 Procvičovací testy</h3>
-                <p>Otestujte své znalosti pomocí interaktivních kvízů a otázek ve stylu maturitní zkoušky.</p>
-            </div>
-            <div class="card">
-                <h3>📖 Studijní materiály</h3>
-                <p>Přístup k poznámkám, diagramům a podrobným vysvětlením pro přípravu na zkoušku.</p>
-            </div>
+        <div class="sections" >
+            <a href="topics.php">
+                <div class="card">
+                    <h3>🔬 Témata</h3>
+                    <p>Projdi si maturitní témata zpracovaná do zápisků.</p>
+                </div>
+            </a>
+            <a href="practice.php">
+                <div class="card">
+                    <h3>📊 Procvičování pomocí různých cvičení</h3>
+                    <p>Otestujte své znalosti pomocí interaktivních procvičování a otázek na důležité informace k daným tématům.</p>
+                </div>
+            </a>
+            <a href="resources.php">
+                <div class="card">
+                    <h3>📖 Studijní materiály</h3>
+                    <p>Koukni se na různé doporučené knihy které můžeš využít na učení nebo i vlastní spracovávání otázek</p>
+                </div>
+            </a>
         </div>
     </div>
     <section class="purpose">
         <h2>Náš cíl</h2>
-        <p>Biomaturita je věnována pomoci studentům uspět u maturitní zkoušky z biologie. Poskytujeme komplexní, přístupné studijní materiály a cvičné materiály navržené odborníky na vzdělávání, abyste zvládli klíčové biologické koncepty a dosáhli nejlepších výsledků.</p>
+        <p>Biomaturita je věnována pomoci studentům uspět u maturitní zkoušky z biologie. Najdete tu spracovaná jednotlivé maturitní otázky a ke každé z nich procvičování. Slouží pro všechny maturanty a maturantky co nechtějí nechat vše na poslední chvíli.</p>
     </section>
     <section class="practice-options">
         <h2>Možnosti procvičování</h2>
@@ -51,19 +51,19 @@
             <a href="otazky_menu.php">
             <div class="practice-card">
                 <h3>📝 Otázky s výběrem</h3>
-                <p>Testuj své znalosti otázkami s výběrem odpovědí pokrývajícími všechna hlavní témata biologie.</p>
+                <p>Testuj své znalosti otázkami s výběrem odpovědí pokrývajícími všechna hlavní témata k jednotlivým otázkám.</p>
             </div>
             </a>
             <a href="poznavacka_menu.php">
             <div class="practice-card">
                 <h3>🎯 Poznavačka</h3>
-                <p>Dynamické kvízy, které se přizpůsobují tvé úrovni a sledují tvůj pokrok.</p>
+                <p>Zkus si poznávačku na fotkách k jednotlivým tématům.</p>
             </div>
             </a>
             <a href="pexeso_menu.php">
                 <div class="practice-card">
                     <h3>🧩 Pexeso</h3>
-                    <p>Zlepši svou paměť a znalosti zábavným způsobem pomocí naší hry pexeso.</p>
+                    <p>Spáruj termín a jeho definici pro procvičení podstatných termínů k jednotlivým otázkám.</p>
                 </div>
             </a>
         </div>

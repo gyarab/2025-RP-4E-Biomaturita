@@ -39,7 +39,7 @@ $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         
         .topics-grid {
-            display: grid;
+            display: block;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
         }
@@ -52,7 +52,7 @@ $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
             background: #e3f2fd;
             padding: 1.5rem;
             border-radius: 8px;
-            border-left: 5px solid #1976d2;
+            border-left: 5px solid #2e7d32;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             cursor: pointer;
             transition: transform 0.2s, box-shadow 0.2s;
@@ -65,7 +65,7 @@ $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         
         .topic-item h3 {
-            color: #0d47a1;
+            color: #1b5e20;
             margin-bottom: 0.5rem;
         }
         
@@ -81,13 +81,7 @@ $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>Připrav se na maturitu z biologie</p>
     </header>
 
-    <nav>
-        <a href="mainpage.php">Domů</a>
-        <a href="topics.php">Témata</a>
-        <a href="resources.php">Zdroje</a>
-        <a href="practice.php">Procvičování</a>
-        <a href="contact.php">Kontakty</a>
-    </nav>
+    <?php include 'menu.php'; ?>
 
     <div class="container">
         <div class="otazky-header">

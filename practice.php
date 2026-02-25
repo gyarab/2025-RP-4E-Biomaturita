@@ -13,13 +13,7 @@
         <p>Připrav se na maturitu z biologie</p>
     </header>
 
-    <nav>
-        <a href="mainpage.php">Domů</a>
-        <a href="topics.php">Témata</a>
-        <a href="resources.php">Zdroje</a>
-        <a href="practice.php">Procvičování</a>
-        <a href="contact.php">Kontakty</a>
-    </nav>
+    <?php include 'menu.php'; ?>
 
     <section class="hero">
         <h2>Procvičování</h2>
@@ -32,19 +26,19 @@
             <a href="otazky_menu.php">
             <div class="practice-card">
                 <h3>📝 Otázky s výběrem</h3>
-                <p>Testuj své znalosti otázkami s výběrem odpovědí pokrývajícími všechna hlavní témata biologie.</p>
+                <p>Testuj své znalosti otázkami s výběrem odpovědí pokrývajícími všechna hlavní témata k jednotlivým otázkám.</p>
             </div>
             </a>
             <a href="poznavacka_menu.php">
             <div class="practice-card">
                 <h3>🎯 Poznavačka</h3>
-                <p>Dynamické kvízy, které se přizpůsobují tvé úrovni a sledují tvůj pokrok.</p>
+                <p>Zkus si poznávačku na fotkách k jednotlivým tématům.</p>
             </div>
             </a>
             <a href="pexeso_menu.php">
                 <div class="practice-card">
                     <h3>🧩 Pexeso</h3>
-                    <p>Zlepši svou paměť a znalosti zábavným způsobem pomocí naší hry pexeso.</p>
+                    <p>Spáruj termín a jeho definici pro procvičení podstatných termínů k jednotlivým otázkám.</p>
                 </div>
             </a>
         </div>

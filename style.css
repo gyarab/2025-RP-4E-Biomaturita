@@ -209,3 +209,20 @@ footer {
     font-size: 0.95rem;
     color: #555;
 }
+
+.card {
+    text-decoration: none;
+}
+
+.card h3 {
+    text-decoration: none;
+} 
+
+.card p {
+    text-decoration: none;
+}
+
+.sections a {
+    text-decoration: none;
+    color: black;
+}

@@ -57,10 +57,11 @@ $cardsJson = json_encode($cards);
             gap: 1rem;
             margin: 2rem auto;
             max-width: 600px;
+            grid-auto-rows: 2fr;
         }
         .card {
             width: 100%;
-            aspect-ratio: 1;
+            aspect-ratio: 0.9;
             background: #e8f5e9;
             display: flex;
             justify-content: center;
@@ -69,13 +70,18 @@ $cardsJson = json_encode($cards);
             border-radius: 8px;
             border-left: 5px solid #2e7d32;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            font-size: 1rem;
+            font-size: 0.8rem;
             font-weight: bold;
             transition: transform 0.2s, box-shadow 0.2s;
             padding: 1rem;
             text-align: center;
+            box-sizing: border-box;
+            overflow: hidden;
+            word-break: break-word;
+            overflow-y: auto;
+
         }
-        .card:hover {
+        .card:hover:not(.matched):not(.flipped) {
             transform: translateY(-5px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
@@ -95,14 +101,8 @@ $cardsJson = json_encode($cards);
         <p><?php echo htmlspecialchars($topic['nazev']); ?></p>
     </header>
 
-    <nav>
-        <a href="mainpage.php">Domů</a>
-        <a href="topics.php">Témata</a>
-        <a href="resources.php">Zdroje</a>
-        <a href="pexeso_menu.php">Pexeso</a>
-        <a href="contact.php">Kontakty</a>
-    </nav>
-
+    <?php include 'menu.php'; ?>
+    <a href="pexeso_menu.php" class="back-button">← Zpět na témata</a>
     <div class="container">
         <section class="practice-options">
             <h2>Pexeso - <?php echo htmlspecialchars($topic['nazev']); ?></h2>
@@ -154,7 +154,7 @@ $cardsJson = json_encode($cards);
             const index1 = parseInt(card1.dataset.index);
             const index2 = parseInt(card2.dataset.index);
 
-            if (cards[index1].pair === cards[index2].content || cards[index2].pair === cards[index1].content) {
+            if (cards[index1].content === cards[index2].pair || cards[index2].content === cards[index1].pair) {
                 card1.classList.add('matched');
                 card2.classList.add('matched');
                 matchedPairs++;

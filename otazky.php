@@ -191,13 +191,7 @@ foreach ($results as $row) {
         <p>Připrav se na maturitu z biologie</p>
     </header>
 
-    <nav>
-        <a href="mainpage.php">Domů</a>
-        <a href="topics.php">Témata</a>
-        <a href="resources.php">Zdroje</a>
-        <a href="practice.php">Procvičování</a>
-        <a href="contact.php">Kontakty</a>
-    </nav>
+    <?php include 'menu.php'; ?>
 
     <div class="container">
         <a href="otazky_menu.php" class="back-button">← Zpět na témata</a>

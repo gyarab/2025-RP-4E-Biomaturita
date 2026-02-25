@@ -22,6 +22,33 @@ $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Témata - Biomaturita</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .topics-list {
+            display: block;
+            grid-template-columns: repeat 1fr;
+            gap: 1.5rem;
+        }
+        .topic-card-link {
+            text-decoration: none;
+            color: inherit;
+        }
+        .topic-card {
+            background: #e3f2fd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 5px solid #1b5e20;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+            border-bottom: 5px;
+        }
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        
+    </style>
 </head>
 <body>
     <header>
@@ -29,17 +56,11 @@ $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>Připrav se na maturitu z biologie</p>
     </header>
 
-    <nav>
-        <a href="mainpage.php">Domů</a>
-        <a href="topics.php">Témata</a>
-        <a href="resources.php">Zdroje</a>
-        <a href="practice.php">Procvičování</a>
-        <a href="contact.php">Kontakty</a>
-    </nav>
+    <?php include 'menu.php'; ?>
 
     <section class="hero">
         <h2>Témata biologie</h2>
-        <p>Ovládněte všechna základní témata pro vaši maturitu z biologie</p>
+        <p>Projdi si maturitní témata zpracovaná do zápisků.</p>
     </section>
 
     <div class="container">

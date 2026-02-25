@@ -39,7 +39,7 @@ $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         
         .topics-grid {
-            display: grid;
+            display: block;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
         }
@@ -81,13 +81,7 @@ $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>Připrav se na maturitu z biologie</p>
     </header>
 
-    <nav>
-        <a href="mainpage.php">Domů</a>
-        <a href="topics.php">Témata</a>
-        <a href="resources.php">Zdroje</a>
-        <a href="practice.php">Procvičování</a>
-        <a href="contact.php">Kontakty</a>
-    </nav>
+    <?php include 'menu.php'; ?>
 
     <div class="container">
         <div class="pexeso-header">
@@ -100,7 +94,7 @@ $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <a href="pexeso.php?tema_id=<?php echo $topic['id']; ?>" class="topic-link">
                     <div class="topic-item">
                         <h3><?php echo htmlspecialchars($topic['nazev']); ?></h3>
-                        <p>Procvič si paměť a znalosti</p>
+                        <p>Spáruj termín a jeho definici</p>
                     </div>
                 </a>
             <?php endforeach; ?>
