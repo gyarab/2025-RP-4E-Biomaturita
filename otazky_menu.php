@@ -26,7 +26,7 @@ $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="style.css">
     <style>
         .otazky-header {
-            background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+            background: linear-gradient(135deg, #2e7d32 0%, #558b2f 100%);
             color: white;
             padding: 2rem;
             border-radius: 8px;
@@ -49,7 +49,7 @@ $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         
         .topic-item {
-            background: #e3f2fd;
+            background: #e8f5e9;
             padding: 1.5rem;
             border-radius: 8px;
             border-left: 5px solid #2e7d32;

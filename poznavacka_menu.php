@@ -49,7 +49,7 @@ $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         
         .topic-item {
-            background: #e3f2fd;
+            background: #e8f5e9;
             padding: 1.5rem;
             border-radius: 8px;
             border-left: 5px solid #2e7d32;

@@ -27,7 +27,7 @@ $stmt->execute([$tema_id]);
 $poznavacka = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$poznavacka) {
-    die("No image found for this topic.");
+    die("Omlouváme se ale pro toto téma ještě není hotová poznávačka. Zkuste jiné téma :3.");
 }
 
 $stmt = $pdo->prepare("
