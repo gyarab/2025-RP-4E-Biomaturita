@@ -64,39 +64,31 @@
 
     <section class="hero">
         <h2>📖 Studijní materiály</h2>
-        <p>Objevte doporučené zdroje a materiály pro přípravu na maturitu</p>
+        <p>Pár knih které se mohou hodit na přípravu k maturitě i na přijímací zkoušky na vysoké školy.</p>
     </section>
 
     <div class="container">
         <div class="resource-item">
-            <img src="images/book1.jpg" alt="Biologie učebnice" class="resource-image">
+            <img src="images/novy-prehled-biologie.jpg" alt="Nový přehled biologie" class="resource-image">
             <div class="resource-content">
-                <h3>Biologie - Učebnice</h3>
-                <p>Komplexní učebnice pokrývající všechna maturitní témata. Ideální pro základní pochopení konceptů a detailní vysvětlení biologických procesů.</p>
+                <h3>Nový přehled biologie - S. Rozsypal</h3>
+                <p>Kniha vhodná jak pro přípravu na maturitu tak i na přípravu na přijímací zkoušky na vysoké školy. Jsou tam zpracovaná všechna důležitá témata i společně s šikovnými obrázky, které pomahaji vizualizaci tématu.</p>
             </div>
         </div>
 
         <div class="resource-item">
-            <img src="images/book2.jpg" alt="Maturitní cvičení" class="resource-image">
+            <img src="images/biologie-rostlin.webp" alt="Biologie rostlin" class="resource-image">
             <div class="resource-content">
-                <h3>Maturitní cvičení a testy</h3>
-                <p>Sbírka cvičení zaměřená speciálně na maturitní zkoušku. Obsahuje reálné testy a odpovědi s odůvodněním.</p>
+                <h3>Biologie rostlin - L. Kincl a kol.</h3>
+                <p>Učebnice doporučená i pro přijímačky na vysokou školu, ale také velmi vhodná na spracovávání otázek k maturitě týkajících se rostlinné biologie.</p>
             </div>
         </div>
 
         <div class="resource-item">
-            <img src="images/book3.jpg" alt="Anatomie a fyziologie" class="resource-image">
+            <img src="images/biologie-cloveka.webp" alt="Biologie člověka" class="resource-image">
             <div class="resource-content">
-                <h3>Anatomie a fyziologie člověka</h3>
-                <p>Szczegółowe průvodce lidským tělem s vědeckými ilustracemi. Perfektní pro pochopení základních principů medicíny a zdravovědy.</p>
-            </div>
-        </div>
-
-        <div class="resource-item">
-            <img src="images/book4.jpg" alt="Ekologie a evoluce" class="resource-image">
-            <div class="resource-content">
-                <h3>Ekologie a evoluce</h3>
-                <p>Moderní přístup k pochopení ekosystémů a evolučních procesů. Zahrnuje příklady z osobní zkušenosti a současné environmentální problémy.</p>
+                <h3>Biologie člověka 1 a 2, Genetika - E. Kočárek</h3>
+                <p>Učebnice vhodná jak pro maturitu, ale hravě pro přípravu na přijímačky na vysoké školy, hlavě na medicínu. Autor je profesorem na lékařské fakultě univerzity karlovy.</p>
             </div>
         </div>
     </div>
