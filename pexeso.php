@@ -100,7 +100,6 @@ $cardsJson = json_encode($cards);
         <h1>🧩 Pexeso Game</h1>
         <p><?php echo htmlspecialchars($topic['nazev']); ?></p>
     </header>
-
     <?php include 'menu.php'; ?>
     <a href="pexeso_menu.php" class="back-button">← Zpět na témata</a>
     <div class="container">
@@ -108,7 +107,6 @@ $cardsJson = json_encode($cards);
             <h2>Pexeso - <?php echo htmlspecialchars($topic['nazev']); ?></h2>
             <p>Najděte všechny páry karet!</p>
             <div class="game-board" id="gameBoard">
-                <!-- Cards will be dynamically loaded here -->
             </div>
         </section>
     </div>
@@ -168,7 +166,7 @@ $cardsJson = json_encode($cards);
                     card2.classList.remove('flipped');
                     card1.textContent = '?';
                     card2.textContent = '?';
-                }, 1000);
+                }, 2500);
             }
 
             flippedCards = [];
